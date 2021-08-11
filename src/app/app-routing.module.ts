@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo : 'home',pathMatch:'full'},
+  {path: '', component : HomeComponent},
   {path: 'recipes', component : RecipesComponent},
   {path: 'recipes/:id', component : RecipeDetailsComponent},
   {path : 'profile', component :ProfileComponent}

@@ -1,0 +1,24 @@
+        @import '../styles/colors.scss';
+        .page-title {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            color: darken($text-color, 25);
+        }
+        
+        .page-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5em;
+            padding: 5%;
+        }
+        
+        .page-text a {
+            font-size: 1em;
+            text-decoration: none;
+            margin-top: 1%;
+            line-height: 1;
+        }
+        
+        .page-text a span {
+            font-size: inherit;
+        }

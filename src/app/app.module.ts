@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
-
+import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,7 +25,8 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
