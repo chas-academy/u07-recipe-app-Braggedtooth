@@ -10,6 +10,7 @@
             flex-direction: column;
             font-size: 1.5em;
             padding: 5%;
+            color: $primary;
         }
         
         .page-text a {
@@ -17,8 +18,9 @@
             text-decoration: none;
             margin-top: 1%;
             line-height: 1;
+            color: $accent;
         }
         
-        .page-text a span {
-            font-size: inherit;
+        .page-text a:hover {
+            text-decoration: underline;
         }
