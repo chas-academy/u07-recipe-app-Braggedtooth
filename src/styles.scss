@@ -1,1 +1,3 @@
 /* You can add global styles to this file, and also import other style files */
+
+$themes: (light: (backgroundColor: #fff, textColor: #408bbd, buttonTextColor: #408bbd, buttonTextTransform: none, buttonTextHoverColor: #61b0e7, buttonColor: #fff, buttonBorder: 2px solid #fff, ), dark: (backgroundColor: #222, textColor: #ddd, buttonTextColor: #aaa, buttonTextTransform: uppercase, buttonTextHoverColor: #ddd, buttonColor: #333, buttonBorder: 1px solid #aaa, ), );
