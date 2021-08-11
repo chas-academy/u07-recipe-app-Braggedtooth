@@ -11,6 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginformComponent } from './loginform/loginform.component';
+import { SignupformComponent } from './signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HeaderComponent } from './header/header.component';
     RecipeDetailsComponent,
     HomeComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginformComponent,
+    SignupformComponent
   ],
   imports: [
     BrowserModule,
