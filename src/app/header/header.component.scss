@@ -1,22 +1,30 @@
 @import '../styles/colors.scss';
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary;
+    margin: 0%;
+    padding: 1%;
+}
+
 .title {
-    color: $text-color;
     margin: 0%;
     padding: 0%;
-    margin-bottom: 10px;
+    align-self: flex-end;
 }
 
 .navigation {
+    color: $text-color;
     list-style-type: none;
     font-size: 1.2em;
+    align-self: flex-end;
 }
 
 .navigation a {
-    padding: 0.2em;
+    padding: 0.5em;
     text-decoration: none;
     text-transform: uppercase;
     color: $secondary;
-    background-color: $text-color;
 }
 
 .navigation a:hover {

@@ -1,0 +1,31 @@
+@import '../styles/colors.scss';
+.category-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    background-color: $accent;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+
+.category-item:hover {
+    background-color: darken( $accent, 20);
+    cursor: pointer;
+}
+
+.category-item .title {
+    color: darken($secondary, 10);
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.category-item img {
+    width: max-content;
+    border-radius: 50%;
+}

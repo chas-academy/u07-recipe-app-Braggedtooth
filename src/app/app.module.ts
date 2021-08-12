@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -13,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { SignupformComponent } from './signupform/signupform.component';
     ProfileComponent,
     HeaderComponent,
     LoginformComponent,
-    SignupformComponent
+    SignupformComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { SignupformComponent } from './signupform/signupform.component';
     FormsModule,
     HttpClientModule,
     MatIconModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

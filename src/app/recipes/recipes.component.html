@@ -1,1 +1,5 @@
-<p>recipes works!</p>
+<div *ngFor="let category of  categoriesList.categories">
+    <h1 class="title">{{category.strCategory}}</h1>
+    <p class="subtitle"> {{category.strCategoryDescription}}</p>
+    <img src={{category.strCategoryThumb}} alt="">
+</div>
