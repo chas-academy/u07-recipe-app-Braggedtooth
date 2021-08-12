@@ -13,6 +13,7 @@ export class CategoriesComponent implements OnInit {
 
   getRecipes(category:string) {
     this.dataService.getRecipeFromCat(category).subscribe((data)=>{
+      console.log(data);
       
     })
     

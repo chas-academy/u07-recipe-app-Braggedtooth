@@ -1,6 +1,6 @@
 <div class="category-grid">
     <div *ngFor="let category of  categoriesList.categories">
-        <div class="category-item">
+        <div class="category-item" (click)="getRecipes(category.strCategory)">
             <h1 class="title">{{category.strCategory}}</h1>
 
             <img src={{category.strCategoryThumb}} alt="">

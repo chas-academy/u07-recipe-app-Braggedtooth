@@ -19,7 +19,7 @@ export class DataService {
       return this.httpClient.get(this.REST_API_RANDOM)
     }
     public getRecipeFromCat(cat:string){
-      return this.httpClient.get(this.REST_API_FILTER + cat)
+      return this.httpClient.get(this.REST_API_FILTER + 'c='+ cat)
     }
     
 }

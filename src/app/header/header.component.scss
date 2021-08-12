@@ -10,7 +10,6 @@
 .title {
     margin: 0%;
     padding: 0%;
-    align-self: flex-end;
 }
 
 .navigation {
@@ -28,5 +27,5 @@
 }
 
 .navigation a:hover {
-    background-color: $accent;
+    text-decoration: underline;
 }
