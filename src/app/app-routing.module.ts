@@ -12,8 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {path: '', component : HomeComponent},
   {path:'categories', component:CategoriesComponent},
-  {path: 'recipes', component : RecipesComponent},
-  {path: 'recipes/:id', component : RecipeDetailsComponent},
+  {path: 'categories/:id', component : RecipesComponent},
+  {path: 'categories/:id/:id', component : RecipeDetailsComponent},
   {path : 'profile', component :ProfileComponent}
 ];
 

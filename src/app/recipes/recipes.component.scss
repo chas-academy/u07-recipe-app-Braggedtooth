@@ -1,0 +1,67 @@
+@import '../styles/colors.scss';
+.recipe-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20em;
+    max-height: 300px;
+    min-height: 300px;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    background-color: $accent;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+
+.recipe-card:hover {
+    background-color: darken( $primary, 20);
+    cursor: pointer;
+}
+
+.recipe-card .recipe-name {
+    color: darken($secondary, 10);
+    font-size: medium;
+    text-align: center;
+}
+
+.recipe-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-controls mat-icon {
+    padding: 0.2em;
+}
+
+.recipe-controls mat-icon:hover {
+    color: $background;
+}
+
+.recipe-controls a {
+    background-color: $background;
+    margin: 0.2em;
+    padding: 0.4em;
+    color: $secondary;
+    text-decoration: none;
+    border-radius: 0.2em;
+}
+
+.recipe-controls a:hover {
+    background-color: $accent;
+    color: $text-color;
+}
+
+.recipe-card img {
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    border: 1px solid #ddd;
+}

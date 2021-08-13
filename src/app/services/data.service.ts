@@ -21,5 +21,9 @@ export class DataService {
     public getRecipeFromCat(cat:string){
       return this.httpClient.get(this.REST_API_FILTER + 'c='+ cat)
     }
+    public getRecipeById(id:number){
+      return this.httpClient.get(this.REST_API_SEARCHBYID+id)
+
+    }
     
 }

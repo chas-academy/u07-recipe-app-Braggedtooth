@@ -1,5 +1,16 @@
-<div *ngFor="let category of  categoriesList.categories">
-    <h1 class="title">{{category.strCategory}}</h1>
-    <p class="subtitle"> {{category.strCategoryDescription}}</p>
-    <img src={{category.strCategoryThumb}} alt="">
+<div class="recipe-grid">
+    <div *ngFor="let meal of  RecipeList.meals">
+        <div class="recipe-card ">
+            <h2 class=" recipe-name "> {{meal.strMeal}} </h2>
+            <img src={{meal.strMealThumb}} alt="Recipe image ">
+
+            <div class="recipe-controls ">
+                <mat-icon (click)='myClicker()'>star_border</mat-icon>
+                <a [routerLink]="[meal.idMeal]">Show Recipe </a>
+            </div>
+
+
+        </div>
+
+    </div>
 </div>

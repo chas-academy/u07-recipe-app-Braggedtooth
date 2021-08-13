@@ -11,13 +11,7 @@ export class CategoriesComponent implements OnInit {
   
   constructor(private dataService: DataService) { }
 
-  getRecipes(category:string) {
-    this.dataService.getRecipeFromCat(category).subscribe((data)=>{
-      console.log(data);
-      
-    })
-    
-  }
+ 
   ngOnInit() {
 
     this.dataService.sendCategoryRequest().subscribe((data)=>{
