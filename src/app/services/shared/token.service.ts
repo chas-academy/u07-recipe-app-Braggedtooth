@@ -7,13 +7,13 @@ import { Injectable } from '@angular/core';
 export class TokenService {
 
   private issuer = {
-    login: 'http://127.0.0.1:8000/api/auth/login',
-    register: 'http://127.0.0.1:8000/api/auth/register'
+    login:  'http://localhost/api/auth/ '      /* 'https://u08recipeapi.herokuapp.com/api/auth/login' */,
+    register:'http://localhost/api/auth/ ' /* 'https://u08recipeapi.herokuapp.com/api/auth/register' */
   }
 
   constructor() { }
 
-  handleData(token :any){
+  handleData(token:string){
     localStorage.setItem('auth_token', token);
   }
 
@@ -22,29 +22,29 @@ export class TokenService {
   }
 
   // Verify the token
-  isValidToken(){
+  isValidToken(){ 
      const token = this.getToken();
-     if(!token){
-      return false;
+     if(!token){ 
+      return false; 
      } 
      else {
       const payload = this.payload(token);
-      if(payload){
-        return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false;
-      } 
-      else return
-       
+      if(!payload){
+        return false
+      }
+      else {
+        return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false; } 
      }
   }
 
-  payload(token:any) {
+  payload(token:string) {
     const jwtPayload = token.split('.')[1];
     return JSON.parse(atob(jwtPayload));
   }
 
   // User state based on valid token
   isLoggedIn() {
-    return this.isValidToken();
+    return this.isValidToken() ;
   }
 
   // Remove token
