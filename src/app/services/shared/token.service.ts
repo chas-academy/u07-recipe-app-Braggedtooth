@@ -24,23 +24,18 @@ export class TokenService {
   // Verify the token
   isValidToken(){ 
      const token = this.getToken();
-     if(!token){ 
-      return false; 
-     } 
-     else {
-      const payload = this.payload(token);
-      if(!payload){
-        return false
+     if(token){
+     return true
       }
-      else {
-        return Object.values(this.issuer).indexOf(payload.iss) > -1 ? true : false; } 
-     }
-  }
+     else {
+       return false;
+    }
+ }
 
-  payload(token:string) {
+/*   payload(token:string) {
     const jwtPayload = token.split('.')[1];
     return JSON.parse(atob(jwtPayload));
-  }
+  } */
 
   // User state based on valid token
   isLoggedIn() {

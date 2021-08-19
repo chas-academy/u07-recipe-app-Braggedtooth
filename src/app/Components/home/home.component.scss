@@ -1,26 +1,8 @@
-        @import '../styles/colors.scss';
-        .page-title {
-            font-size: 1.5em;
-            text-transform: uppercase;
-            color: $text-color;
+        @import '../../styles/colors.scss';
+        .mat-tab-group {
+            margin-bottom: 48px;
         }
         
-        .page-text {
-            display: flex;
-            flex-direction: column;
-            font-size: 1.5em;
-            padding: 5%;
-            color: $text-color;
-            line-height: 1;
-        }
-        
-        .page-text a {
-            font-size: 1em;
-            text-decoration: none;
-            margin-top: 1%;
-            color: $accent;
-        }
-        
-        .page-text a:hover {
-            text-decoration: underline;
+        .mat-card {
+            padding: 10em !important;
         }

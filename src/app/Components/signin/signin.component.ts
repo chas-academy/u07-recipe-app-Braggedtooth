@@ -33,6 +33,8 @@ export class SigninComponent implements OnInit {
   onSubmit() {
       this.authService.signin(this.loginForm.value).subscribe(
         result => {
+          console.log(result);
+          /* localStorage.setItem("user", JSON.stringify(result.user)); */
           this.responseHandler(result);
         },
         error => {

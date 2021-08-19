@@ -1,11 +1,21 @@
+<mat-toolbar color="accent" class="page-bar">
+    <h1 style="text-align: center;">Profile</h1>
+</mat-toolbar>
 <div class="container">
-    <div class="card inner-main">
+    <div class="card ">
         <div class="card-header">
-            User Profile
+            Welcome <i>{{UserProfile?.name}} </i>To RecipeApp Your favorites are below
         </div>
         <div class="card-body">
             <p class="card-text">Name: <strong>{{UserProfile?.name}}</strong></p>
             <p class="card-text">Email: <strong>{{UserProfile?.email}}</strong></p>
+            <p>{{title}}</p>
+        </div>
+        <div>
+            <button (click)="newList()"><mat-icon>post_add</mat-icon>New List</button>
+            <ul *ngFor="let favorite of favorites">
+                <li>{{favorite.recipe_name}} <i> <mat-icon (click)="deleteFav(favorite.recipe_id)">delete</mat-icon></i></li>
+
+            </ul>
         </div>
     </div>
-</div>

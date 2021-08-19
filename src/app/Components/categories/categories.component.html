@@ -1,11 +1,28 @@
-<div class="category-grid">
-    <div *ngFor="let category of  categoriesList.categories">
-        <a [routerLink]="[category.strCategory]">
-            <div class="category-item">
-                <h1 class="title">{{category.strCategory}}</h1>
+<mat-toolbar color="accent" class="page-bar">
+    <h1 style="text-align: center;">Categories</h1>
+</mat-toolbar>
+<div>
+    <div *ngFor="let category of  categoriesList.categories ">
+        <a [routerLink]="[category.strCategory]" class="category-grid ">
 
-                <img src={{category.strCategoryThumb}} alt="">
-            </div>
+            <mat-card class="category-item">
+
+                <img mat-card-avatar src={{category.strCategoryThumb}} alt="">
+                <mat-card-title class="title">{{category.strCategory}}</mat-card-title>
+                <mat-card-content>{{category.strCategoryDescription}}</mat-card-content>
+
+
+
+            </mat-card>
         </a>
     </div>
+
 </div>
+
+<!-- <div class="category-grid">
+    <div *ngFor="let category of  categoriesList.categories">
+        <a [routerLink]="[category.strCategory]">
+
+        </a>
+    </div>
+</div> -->

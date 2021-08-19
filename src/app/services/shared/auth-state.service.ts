@@ -8,7 +8,7 @@ import { TokenService } from '../shared/token.service';
 
 export class AuthStateService {
 
-  private userState = new BehaviorSubject(this.token.isLoggedIn());
+  private userState = new BehaviorSubject<boolean>(this.token.isLoggedIn());
   userAuthState = this.userState.asObservable();
 
   constructor(
@@ -17,6 +17,8 @@ export class AuthStateService {
 
   setAuthState(value: boolean) {
     this.userState.next(value);
+    console.log(this.userState);
+    
   }
   
 }

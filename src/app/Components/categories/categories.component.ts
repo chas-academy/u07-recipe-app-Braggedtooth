@@ -5,6 +5,10 @@ import { DataService } from '../../services/data.service';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
+
+/**
+ * @title Basic grid-list
+ */
 export class CategoriesComponent implements OnInit {
 
   categoriesList :any = [];

@@ -1,43 +1,29 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TokenService } from './shared/token.service';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuerryService {
+export class BackendService {
 
-  private BACKEND_API_URL = 'https://u08recipeapi.herokuapp.com/api/'
+  private BACKEND_API_URL =  'http://localhost/api/auth/'/* 'https://u08recipeapi.herokuapp.com/api/auth' */
 
 
-  constructor(private HttpClient: HttpClient) {  }
+  constructor(private HttpClient: HttpClient, private tokenService: TokenService) {  }
     /**
      * register
      */ 
     
-    public register(name:string,email:string, password:string) {
-      let formdata = new FormData;
-      formdata.append('name',name)
-      formdata.append('email',email)
-      formdata.append('password',password)
-      return this.HttpClient.post(this.BACKEND_API_URL+'/register', formdata)
-    }
-    public login(email:string, password:string) {
-      const formdata = new FormData;
-      formdata.append('email',email)
-      formdata.append('password',password)
-      return this.HttpClient.post(this.BACKEND_API_URL+'/login', formdata)
-    }
-
-    public addFav($recipeId:any, token:string) {
-      const formdata = new FormData;
-      let header = new Headers({ 'Authorization': `Bearer ${token}` });
-      formdata.append('recipe_id',$recipeId)
-      return this.HttpClient.post(this.BACKEND_API_URL+'/newlist', formdata,{
-        headers:{
-          "Content-Type": "multipart/form-data",
-          
-        }
-      })
+    
+    public addFav(favorites:object) {
+        console.log(favorites);
+      const  accessToken = this.tokenService.getToken();
+      return this.HttpClient.post(this.BACKEND_API_URL+'addtofavorites', favorites,{
+        headers:{'Authorization': `Bearer ${accessToken}`}
+      } )
     }
 
    
