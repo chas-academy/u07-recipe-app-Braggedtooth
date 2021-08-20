@@ -23,6 +23,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +56,11 @@ import {MatListModule} from '@angular/material/list';
     MatGridListModule,
     MatDividerModule,
     MatListModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    
     
   ],
   providers: [/* {

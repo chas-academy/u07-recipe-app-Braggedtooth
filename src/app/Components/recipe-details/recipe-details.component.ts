@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BackendService } from 'src/app/services/backend.service';
-import { UserProfileComponent } from '../user-profile/user-profile.component';
+
 
 
 @Component({
@@ -15,31 +14,11 @@ export class RecipeDetailsComponent implements OnInit {
   id: any = ""
   errors :any;
   isFavorite= false
-  FavoriteRecipe:object= {}
-  constructor(private dataService: DataService,private activateRoute:ActivatedRoute, private backend:BackendService,public router: Router) { }
+  
+  constructor(private dataService: DataService,private activateRoute:ActivatedRoute,public router: Router) { }
 
   
-  addFavoriteFunc($id:number,$name:string){
-    
-  /*  const user= JSON.parse(localStorage.getItem('user')||'{}') */
-    this.FavoriteRecipe = {
-      recipe_id :$id,
-      recipe_name :$name ,
-      
-     } 
-    
-     this.backend.addFav(this.FavoriteRecipe).subscribe(
-       result=>{
-        console.log(result);
-       
-     },
-    error => {
-      this.errors = error.error;
-    },()=>{
-      this.router.navigate(['profile']);
-    })
-    
-  }
+
   ngOnInit(): void {
 
    

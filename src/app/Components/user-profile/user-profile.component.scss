@@ -15,5 +15,40 @@
 /* Add some padding inside the card container */
 
 .container {
+    margin-top: 10px;
     padding: 2px 16px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.firstEl {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*
+.secondEL {
+    align-self: flex-end;
+} */
+
+.default-list-radio {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-self: flex-end;
+}
+
+.default-list-radiobtn {
+    margin: 5px;
+}
+
+.listStyle {
+    cursor: pointer;
 }

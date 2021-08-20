@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BackendService } from 'src/app/services/backend.service';
+
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -9,12 +11,40 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipesComponent implements OnInit {
   RecipeList :any = [];
   id:any = ""
-  constructor(private dataService: DataService,private activateRoute:ActivatedRoute) { }
- myClicker =()=>{
-      console.log('clicked');
-      
+  defaultList:string= ""
+  FavoriteRecipe:object= {}
+  constructor(private dataService: DataService,private activateRoute:ActivatedRoute, private backend:BackendService,public router: Router) { }
+ getActiveList(){ 
+    const data = sessionStorage.getItem('default') 
+    if(data){
+      this.defaultList = data;
     }
- 
+    
+  }
+  addFavoriteFunc($id:number,$name:string){
+    
+    this.getActiveList()
+   
+    this.FavoriteRecipe = {
+      recipe_id :$id,
+      recipe_name :$name ,
+      list_name: this.defaultList,
+      
+     } 
+     
+    
+     this.backend.addFav(this.FavoriteRecipe).subscribe(
+       result=>{
+        console.log(result);
+       
+     })/*,
+    error => {
+      
+    } ,()=>{
+      this.router.navigate(['profile']);
+    } */
+    
+  }
   ngOnInit() {
 
     /* this.dataService.sendCategoryRequest().subscribe((data)=>{

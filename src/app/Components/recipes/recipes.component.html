@@ -10,7 +10,7 @@
             <mat-card-actions>
 
                 <button mat-raised-button color="accent" [routerLink]="[meal.idMeal]">Show Recipe</button>
-
+                <button mat-raised-button color="accent" (click)="addFavoriteFunc(meal.idMeal,meal.strMeal)">Add To Favorite</button>
             </mat-card-actions>
 
 

@@ -14,11 +14,11 @@ export class TokenService {
   constructor() { }
 
   handleData(token:string){
-    localStorage.setItem('auth_token', token);
+    sessionStorage.setItem('auth_token', token);
   }
 
   getToken(){
-    return localStorage.getItem('auth_token');
+    return sessionStorage.getItem('auth_token');
   }
 
   // Verify the token
