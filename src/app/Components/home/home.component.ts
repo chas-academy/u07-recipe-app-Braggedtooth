@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { DataService } from './../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,21 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataservice:DataService) { }
+  querryRes:any =[]
+
+  searchRecipe(val:string){
+    console.log(val);
+    this.dataservice.getSearch(val).subscribe(
+      result=>{
+        this.querryRes =result;
+        console.log(this.querryRes);
+        
+      }
+
+    )
+    
+  }
 
   ngOnInit(): void {
   }

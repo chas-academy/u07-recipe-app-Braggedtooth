@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../services/shared/auth.service';
 import { BackendService } from 'src/app/services/backend.service';
-import { MatFormFieldControl } from "@angular/material/form-field/form-field-control";
 import {FormControl} from '@angular/forms';
-import { Observable } from 'rxjs';
 
 
 
@@ -45,7 +43,6 @@ export class UserProfileComponent implements OnInit {
     
   setActiveList(){
     sessionStorage.setItem('default',this.defaultList)
-
     const sDv =this.tabs.indexOf(this.defaultList)
     this.selected.setValue(sDv)
 
@@ -54,11 +51,18 @@ export class UserProfileComponent implements OnInit {
 
   getActiveList(){ 
     const data = sessionStorage.getItem('default') 
-    if(data){
+    if(this.defaultList===null){
+      this.isLoaded= false;
+      return
+    }else{
+      if(data){
       this.defaultList = data; 
       const sDv =this.tabs.indexOf(data)
       this.getList(data)
       this.selected.setValue(sDv)
+     
+    }
+    
   }   
         
 }
@@ -98,12 +102,16 @@ export class UserProfileComponent implements OnInit {
       return this.backend.getList($name).subscribe(
         result=>{   
           this.userLists =result 
-          this.favorites =this.userLists.lists.favorites;
+          if(this.userLists.lists != undefined){
+            this.favorites =this.userLists.lists.favorites;
+          }
+         
          this.isLoaded= true  
 
       },
      error => {
        this.errors = error.error;
+       this.isLoaded= false
      })
     }
    
@@ -124,6 +132,7 @@ export class UserProfileComponent implements OnInit {
         },
         error => {
           this.errors = error.error;
+          this.isLoaded= false  
         })
       
     }
@@ -142,6 +151,7 @@ export class UserProfileComponent implements OnInit {
           this.alert="List Deleted"
         }, error => {
       this.errors = error.error;
+      
     }
     )
     }   

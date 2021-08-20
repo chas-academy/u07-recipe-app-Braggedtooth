@@ -15,5 +15,34 @@
             </mat-card-content>
         </mat-card>
     </mat-tab>
-    <mat-tab label="Search Recipes">Content 2</mat-tab>
+    <mat-tab label="Search Recipes">
+        <mat-card>
+            <form>
+                <div class="input-group ">
+                    <input type="text" class="form-control" #input placeholder="search recipes" aria-label="Search Bar" aria-describedby="search for recipes">
+                    <div class="input-group-prepend">
+                        <button class="input-group-text" style="cursor: pointer; " (click)="searchRecipe(input.value)"> <mat-icon>search</mat-icon></button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+        <div class="recipe-grid">
+            <div *ngFor="let meal of  querryRes.meals">
+                <div class="recipe-card ">
+                    <mat-card-header class=" recipe-name "> {{meal.strMeal}} </mat-card-header>
+                    <img mat-card-image src={{meal.strMealThumb}} alt="image of{{meal.strMeal}} ">
+
+                    <mat-card-actions>
+
+                        <button mat-raised-button color="accent" routerLink="recipe/{{meal.idMeal}}">Show Recipe</button>
+                        <!--  <button mat-raised-button color="accent" (click)="addFavoriteFunc(meal.idMeal,meal.strMeal)">Add To Favorite</button> -->
+                    </mat-card-actions>
+
+
+                </div>
+
+            </div>
+        </div>
+    </mat-tab>
+
 </mat-tab-group>

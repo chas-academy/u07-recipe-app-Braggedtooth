@@ -10,7 +10,6 @@ export class User {
   name: String = "";
   email: String ="";
   password: String ="";
-  password_confirmation: String =""
 }
 
 @Injectable({
@@ -21,7 +20,7 @@ export class AuthService {
   
 
   constructor(private http: HttpClient, private tokenService:TokenService ,private auth:AuthStateService ,private router:Router) { }
-  private BACKEND_API_URL = 'http://localhost/api/auth/' /* 'https://u08recipeapi.herokuapp.com/api/auth/' */
+  private BACKEND_API_URL =  'https://u08recipeapi.herokuapp.com/api/auth/' 
   
   
   // User registration

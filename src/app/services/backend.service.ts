@@ -9,7 +9,7 @@ import { TokenService } from './shared/token.service';
 })
 export class BackendService {
 
-  private BACKEND_API_URL =  'http://localhost/api/auth/'/* 'https://u08recipeapi.herokuapp.com/api/auth' */
+  private BACKEND_API_URL =  'https://u08recipeapi.herokuapp.com/api/auth/' 
 
 
   constructor(private HttpClient: HttpClient, private tokenService: TokenService) {  }

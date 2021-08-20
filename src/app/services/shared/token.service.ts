@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class TokenService {
 
   private issuer = {
-    login:  'http://localhost/api/auth/ '      /* 'https://u08recipeapi.herokuapp.com/api/auth/login' */,
-    register:'http://localhost/api/auth/ ' /* 'https://u08recipeapi.herokuapp.com/api/auth/register' */
+    login:'https://u08recipeapi.herokuapp.com/api/auth/login',
+    register:'https://u08recipeapi.herokuapp.com/api/auth/register'
   }
 
   constructor() { }
