@@ -2,11 +2,28 @@
         .mat-tab-group {
             margin-bottom: 48px;
         }
-        
+
         .mat-card {
-            padding: 10em !important;
+
+          flex-direction: column;
+          border-radius: 0;
+
         }
-        
+.mc{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin:  0 auto;
+}
+.mc ul li {
+  text-decoration: none;
+ /*  text-align: start; */
+}
+small{
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
         .recipe-grid {
             display: flex;
             flex-direction: row;
@@ -14,7 +31,17 @@
             align-content: space-between;
             flex-wrap: wrap;
         }
-        
+        .mat-card-header{
+        flex-direction: column;
+        text-align: center;
+        line-height: 2;
+        padding: 1em;
+          font-size: 200%;
+        }
+        .mat-card-content{
+          padding: 1em;
+          line-height: 2;
+        }
         .recipe-card {
             display: flex;
             flex-direction: column;
@@ -28,7 +55,7 @@
             margin-left: 0.5em;
             margin-top: 0.5em;
         }
-        
+
         .recipe-card img {
             border-radius: 4px;
             padding: 5px;

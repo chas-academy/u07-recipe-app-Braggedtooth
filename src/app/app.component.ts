@@ -8,7 +8,7 @@ import { TokenService } from './services/shared/token.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
-   
+
 })
 export class AppComponent implements OnInit {
   isSignedIn: boolean= false;
@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.auth.userAuthState.subscribe(val => {
-      console.log(val);
       this.isSignedIn = val;
     });
   }
