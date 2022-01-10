@@ -12,19 +12,26 @@ import { DataService } from '../../services/data.service';
 export class CategoriesComponent implements OnInit {
 
   categoriesList :any = [];
-  
+
+  truncateString(str :string, num:number) {
+    if (str.length <= num) {
+      return str
+    }
+    return str.slice(0, num) + '...'
+  }
+
   constructor(private dataService: DataService) { }
 
- 
+
   ngOnInit() {
 
     this.dataService.sendCategoryRequest().subscribe((data)=>{
-     
+
       this.categoriesList = data
-      console.log(this.categoriesList);
-      
+
+
     })
-  
-    
+
+
   }
 }

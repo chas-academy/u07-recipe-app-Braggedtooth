@@ -1,20 +1,13 @@
 <mat-toolbar color="accent" class="page-bar">
     <h1 style="text-align: center;">Categories</h1>
 </mat-toolbar>
-<div>
+<div class="grid">
     <div *ngFor="let category of  categoriesList.categories ">
-        <a [routerLink]="[category.strCategory]" class="category-grid ">
-
-            <mat-card class="category-item">
-
+        <mat-card  [routerLink]="[category.strCategory]" class="category-grid ">
                 <img mat-card-avatar src={{category.strCategoryThumb}} alt="">
                 <mat-card-title class="title">{{category.strCategory}}</mat-card-title>
-                <mat-card-content>{{category.strCategoryDescription}}</mat-card-content>
-
-
-
-            </mat-card>
-        </a>
+                <mat-card-content>{{ truncateString(category.strCategoryDescription , 200) }}</mat-card-content>
+        </mat-card>
     </div>
 
 </div>
