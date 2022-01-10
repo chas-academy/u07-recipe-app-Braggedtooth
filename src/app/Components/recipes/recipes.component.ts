@@ -14,61 +14,48 @@ export class RecipesComponent implements OnInit {
   defaultList:string= ""
   FavoriteRecipe:object= {}
   constructor(private dataService: DataService,private activateRoute:ActivatedRoute, private backend:BackendService,public router: Router) { }
- getActiveList(){ 
-    const data = sessionStorage.getItem('default') 
+ getActiveList(){
+    const data = sessionStorage.getItem('default')
     if(data){
       this.defaultList = data;
     }
-    
+
   }
   addFavoriteFunc($id:number,$name:string){
-    
+
     this.getActiveList()
-   
+
     this.FavoriteRecipe = {
       recipe_id :$id,
       recipe_name :$name ,
       list_name: this.defaultList,
-      
-     } 
-     
-    
-     this.backend.addFav(this.FavoriteRecipe).subscribe(
-       result=>{
-        console.log(result);
-       
-     })/*,
-    error => {
-      
-    } ,()=>{
-      this.router.navigate(['profile']);
-    } */
-    
+
+     }
+
+     this.backend.addFav(this.FavoriteRecipe).subscribe((response=> {
+       if(response.hasOwnProperty(400)){
+        alert("Please Login to save a favorite")
+       }
+     })
+     )
+
   }
   ngOnInit() {
 
-    /* this.dataService.sendCategoryRequest().subscribe((data)=>{
-     
-      this.categoriesList = data
-      console.log(this.categoriesList);
-      
-    }) */
-
-  
     const getRecipes = (category:string) => {
       this.dataService.getRecipeFromCat(category).subscribe((data)=>{
         console.log(data);
         this.RecipeList= data;
       })
-      
+
     }
     this.activateRoute.paramMap.subscribe(params=>{
       this.id= params.get('id')
       getRecipes( this.id)
     })
-  
-    
+
+
   }
- 
+
 
 }
